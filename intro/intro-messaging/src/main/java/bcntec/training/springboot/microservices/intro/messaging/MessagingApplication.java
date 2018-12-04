@@ -26,6 +26,7 @@ public class MessagingApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
         sender.send("Hello Messaging..!!!");
     }
 
