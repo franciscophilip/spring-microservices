@@ -3,12 +3,12 @@ package bcntec.training.springboot.microservices.intro;
 import java.util.Calendar;
 import java.util.concurrent.atomic.LongAdder;
 
-class TPSCounter {
+class ControllerCounter {
     LongAdder count;
     int threshold = 2;
     Calendar expiry = null;
 
-    TPSCounter() {
+    ControllerCounter() {
         count = new LongAdder();
         expiry = Calendar.getInstance();
         expiry.add(Calendar.MINUTE, 1);

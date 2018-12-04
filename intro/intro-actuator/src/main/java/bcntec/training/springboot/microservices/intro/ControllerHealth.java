@@ -5,8 +5,8 @@ import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
 
 @Component
-class TPSHealth implements HealthIndicator {
-    TPSCounter counter;
+class ControllerHealth implements HealthIndicator {
+    ControllerCounter counter;
 
 
     @Override
@@ -20,7 +20,7 @@ class TPSHealth implements HealthIndicator {
 
     void updateTx() {
         if (counter == null || counter.isExpired()) {
-            counter = new TPSCounter();
+            counter = new ControllerCounter();
 
         }
         counter.increment();

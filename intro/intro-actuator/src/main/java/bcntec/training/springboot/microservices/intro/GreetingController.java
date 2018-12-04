@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 class GreetingController {
     private static final Logger logger = LoggerFactory.getLogger(GreetingController.class);
 
-    TPSHealth health;
+    ControllerHealth health;
     MeterRegistry counterService;
     MeterRegistry gaugeService;
 
     @Autowired
-    GreetingController(TPSHealth health, MeterRegistry counterService, MeterRegistry gaugeService) {
+    GreetingController(ControllerHealth health, MeterRegistry counterService, MeterRegistry gaugeService) {
         this.health = health;
         this.counterService = counterService;
         this.gaugeService = gaugeService;
