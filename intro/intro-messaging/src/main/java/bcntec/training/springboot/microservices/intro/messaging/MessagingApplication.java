@@ -32,7 +32,7 @@ public class MessagingApplication implements CommandLineRunner {
         sender.send("Hello Messaging..!!!");
 
         Scanner scanner = new Scanner(System.in);
-        while(scanner.hasNextLine()){
+        while (scanner.hasNextLine()) {
             sender.send(scanner.nextLine());
         }
     }

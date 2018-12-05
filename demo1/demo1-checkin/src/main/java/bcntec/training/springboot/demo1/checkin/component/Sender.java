@@ -6,21 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-@Component 
+@Component
 public class Sender {
-	
-	RabbitMessagingTemplate template;
 
-	@Autowired
-	Sender(RabbitMessagingTemplate template){
-		this.template = template;
-	}
-	@Bean
-	Queue queue() {
-		return new Queue("CheckINQ", false);
-	}
-	
-	public void send(Object message){
-		template.convertAndSend("CheckINQ", message);
-	}
+    RabbitMessagingTemplate template;
+
+    @Autowired
+    Sender(RabbitMessagingTemplate template) {
+        this.template = template;
+    }
+
+    @Bean
+    Queue queue() {
+        return new Queue("CheckINQ", false);
+    }
+
+    public void send(Object message) {
+        template.convertAndSend("CheckINQ", message);
+    }
 }

@@ -8,18 +8,21 @@ import org.springframework.stereotype.Component;
 
 @Component
 class Receiver {
-	@Autowired
-	Mailer mailer;
+    @Autowired
+    Mailer mailer;
 
-	@Bean
+    @Bean
     Queue queue() {
-		return new Queue("CustomerQ", false);
-	}
+        return new Queue("CustomerQ", false);
+    }
 
-	@RabbitListener(queues = "CustomerQ")
+    @RabbitListener(queues = "CustomerQ")
     public void processMessage(String email) {
-       System.out.println(email);
-       mailer.sendMail(email);
+        System.out.println(email);
+        try {
+            mailer.sendMail(email);
+        } catch (Exception ignored) {
+        }
     }
 
 }

@@ -2,27 +2,23 @@ package bcntec.training.springboot.demo1.fares.component;
 
 import bcntec.training.springboot.demo1.fares.entity.Fare;
 import bcntec.training.springboot.demo1.fares.repository.FaresRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component 
+@Slf4j
+@Component
 public class FaresComponent {
-	private static final Logger logger = LoggerFactory.getLogger(FaresComponent.class);
 
-	FaresRepository faresRepository;
-	
-	public FaresComponent(){
-		
-	}
-	@Autowired
-	public FaresComponent(FaresRepository faresRepository){
-		this.faresRepository = faresRepository;
-	}
+    private final FaresRepository faresRepository;
 
-	public Fare getFare(String flightNumber, String flightDate){
-		logger.info("Looking for fares flightNumber "+ flightNumber + " flightDate "+ flightDate);
-		return faresRepository.getFareByFlightNumberAndFlightDate(flightNumber, flightDate);
-	}
+    @Autowired
+    public FaresComponent(FaresRepository faresRepository) {
+        this.faresRepository = faresRepository;
+    }
+
+    public Fare getFare(String flightNumber, String flightDate) {
+        log.info("Looking for fares flightNumber " + flightNumber + " flightDate " + flightDate);
+        return faresRepository.getFareByFlightNumberAndFlightDate(flightNumber, flightDate);
+    }
 }

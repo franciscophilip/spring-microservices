@@ -3,13 +3,11 @@ package bcntec.training.springboot.demo1.client;
 import java.util.Date;
 import java.util.Set;
 
- 
 
- 
 public class BookingRecord {
 
- 	long id;
-    
+    long id;
+    Set<Passenger> passengers;
     private String flightNumber;
     private String origin;
     private String destination;
@@ -17,102 +15,99 @@ public class BookingRecord {
     private Date bookingDate;
     private String fare;
     private String status;
-    
-      Set<Passenger> passengers;
 
-	public BookingRecord() {
-	}    
-    
-	public BookingRecord(String flightNumber,String from, String to, 
-						String flightDate, Date bookingDate, String fare) {
-		this.flightNumber = flightNumber;
-		this.origin = from;
-		this.destination = to;
-		this.flightDate = flightDate;
-		this.bookingDate = bookingDate;
-		this.fare = fare;
- 	}
+    public BookingRecord() {
+    }
 
-	
-	public String getStatus() {
-		return status;
-	}
+    public BookingRecord(String flightNumber, String from, String to,
+                         String flightDate, Date bookingDate, String fare) {
+        this.flightNumber = flightNumber;
+        this.origin = from;
+        this.destination = to;
+        this.flightDate = flightDate;
+        this.bookingDate = bookingDate;
+        this.fare = fare;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
 
-	public String getFare() {
-		return fare;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public void setFare(String fare) {
-		this.fare = fare;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public String getFlightNumber() {
-		return flightNumber;
-	}
+    public String getFare() {
+        return fare;
+    }
 
-	public void setFlightNumber(String flightNumber) {
-		this.flightNumber = flightNumber;
-	}
+    public void setFare(String fare) {
+        this.fare = fare;
+    }
 
-	public long getId() {
-		return id;
-	}
+    public String getFlightNumber() {
+        return flightNumber;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
+    }
 
-	public String getOrigin() {
-		return origin;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setOrigin(String origin) {
-		this.origin = origin;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getDestination() {
-		return destination;
-	}
+    public String getOrigin() {
+        return origin;
+    }
 
-	public void setDestination(String destination) {
-		this.destination = destination;
-	}
+    public void setOrigin(String origin) {
+        this.origin = origin;
+    }
 
-	public String getFlightDate() {
-		return flightDate;
-	}
+    public String getDestination() {
+        return destination;
+    }
 
-	public void setFlightDate(String flightDate) {
-		this.flightDate = flightDate;
-	}
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
 
-	public Date getBookingDate() {
-		return bookingDate;
-	}
+    public String getFlightDate() {
+        return flightDate;
+    }
 
-	public void setBookingDate(Date bookingDate) {
-		this.bookingDate = bookingDate;
-	}
+    public void setFlightDate(String flightDate) {
+        this.flightDate = flightDate;
+    }
 
-	public Set<Passenger> getPassengers() {
-		return passengers;
-	}
+    public Date getBookingDate() {
+        return bookingDate;
+    }
 
-	public void setPassengers(Set<Passenger> passengers) {
-		this.passengers = passengers;
-	}
+    public void setBookingDate(Date bookingDate) {
+        this.bookingDate = bookingDate;
+    }
 
-	@Override
-	public String toString() {
-		return "BookingRecord [id=" + id + ", flightNumber=" + flightNumber + ", from=" + origin + ", to=" + destination
-				+ ", flightDate=" + flightDate + ", bookingDate=" + bookingDate + ", passengers=" + passengers
-				+ "]";
-	}
-    
-    
-    
+    public Set<Passenger> getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(Set<Passenger> passengers) {
+        this.passengers = passengers;
+    }
+
+    @Override
+    public String toString() {
+        return "BookingRecord [id=" + id + ", flightNumber=" + flightNumber + ", from=" + origin + ", to=" + destination
+                + ", flightDate=" + flightDate + ", bookingDate=" + bookingDate + ", passengers=" + passengers
+                + "]";
+    }
+
+
 }

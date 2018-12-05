@@ -1,23 +1,25 @@
 package bcntec.training.springboot.microservices.intro;
 
+import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 class GreetingController {
-    private static final Logger logger = LoggerFactory.getLogger(GreetingController.class);
 
-    ControllerHealth health;
-    MeterRegistry counterService;
-    MeterRegistry gaugeService;
+    final GreetingRepository repository;
+    final ControllerHealth health;
+    final MeterRegistry counterService;
+    final MeterRegistry gaugeService;
 
     @Autowired
-    GreetingController(ControllerHealth health, MeterRegistry counterService, MeterRegistry gaugeService) {
+    GreetingController(GreetingRepository repository, ControllerHealth health, MeterRegistry counterService, MeterRegistry gaugeService) {
+        this.repository = repository;
         this.health = health;
         this.counterService = counterService;
         this.gaugeService = gaugeService;
@@ -26,11 +28,13 @@ class GreetingController {
     @CrossOrigin
     @RequestMapping("/")
     Greet greet() {
-        logger.info("Serving Request....!!!");
+        log.info("Serving Request....!!!");
         health.updateTx();
-        this.counterService.counter("greet.txnCount");
-        gaugeService.gauge("greet.customgauge", 1.0);
-        return new Greet("Hello World!");
+        Counter t = this.counterService.counter("greet.txnCount");
+        Double d = gaugeService.gauge("greet.customgauge", 1.0);
+        repository.save(new Greeting(health.counter.count.doubleValue()));
+        System.out.println(health.counter.count.doubleValue());
+        return new Greet("Hello World! " + health.counter.count.doubleValue());
     }
 
 

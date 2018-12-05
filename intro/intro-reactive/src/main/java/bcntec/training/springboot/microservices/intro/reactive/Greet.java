@@ -1,19 +1,21 @@
 package bcntec.training.springboot.microservices.intro.reactive;
 
 class Greet {
-	private String message;
-public Greet() {}
+    private String message;
 
-	public Greet(String message) {
-		this.message = message;
-	}
+    public Greet() {
+    }
 
-	public String getMessage() {
-		return message;
-	}
+    public Greet(String message) {
+        this.message = message;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
 }

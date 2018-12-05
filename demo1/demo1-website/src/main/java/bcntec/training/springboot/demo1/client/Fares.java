@@ -1,53 +1,53 @@
 package bcntec.training.springboot.demo1.client;
 
- 
+
 public class Fares {
 
-   	long id;
-    
+    long id;
+
     String fare;
     String currency;
 
-    
-	public Fares(String fare,String currency) {
-		super();
-		this.fare = fare;
-		this.currency = currency;
-	}
 
-	public Fares() {
-		super();
-	}
+    public Fares(String fare, String currency) {
+        super();
+        this.fare = fare;
+        this.currency = currency;
+    }
 
- 
-	public long getId() {
-		return id;
-	}
+    public Fares() {
+        super();
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
 
-	public String getFare() {
-		return fare;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setFare(String fare) {
-		this.fare = fare;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public String getCurrency() {
-		return currency;
-	}
+    public String getFare() {
+        return fare;
+    }
 
-	public void setCurrency(String currency) {
-		this.currency = currency;
-	}
+    public void setFare(String fare) {
+        this.fare = fare;
+    }
 
-	@Override
-	public String toString() {
-		return "Fares [id=" + id + ", fare=" + fare + ", currency=" + currency + "]";
-	}
-    
-    
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    @Override
+    public String toString() {
+        return "Fares [id=" + id + ", fare=" + fare + ", currency=" + currency + "]";
+    }
+
+
 }

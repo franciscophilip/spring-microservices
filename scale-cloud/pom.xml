@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>bcntec.training.springboot.microservicios.scalecloud.microservices.scalecloud</groupId>
+    <artifactId>scale-cloud</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <module>scale-cloud-book</module>
+        <module>scale-cloud-book-apigateway</module>
+        <module>scale-cloud-search</module>
+        <module>scale-cloud-search-apigateway</module>
+        <module>scale-cloud-fares</module>
+        <module>scale-cloud-fares-apigateway</module>
+        <module>scale-cloud-checkin</module>
+        <module>scale-cloud-checkin-apigateway</module>
+        <module>scale-cloud-config-server</module>
+        <module>scale-cloud-eureka-server</module>
+        <module>scale-cloud-website</module>
+    </modules>
+
+
+</project>

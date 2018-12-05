@@ -1,0 +1,3 @@
+
+**Cree un nuevo proyecto de Spring Starter y seleccione Config Servery Actuator
+**Configurar un repositorio Git. Esto podría hacerse apuntando a un repositorio de configuración de Git remoto, como https://github.com/spring-cloud-samples/config-repo . Esta URL es indicativa, un repositorio Git utilizado por los ejemplos de Spring Cloud. Tendremos que usar nuestro propio repositorio Git en su lugar.

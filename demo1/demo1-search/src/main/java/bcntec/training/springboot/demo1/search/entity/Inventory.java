@@ -1,55 +1,23 @@
 package bcntec.training.springboot.demo1.search.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 
+@NoArgsConstructor
+@Data
 @Entity
 public class Inventory {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "inv_id")
-	long id;
-    
-    int count;
-    
- 
-    public Inventory() {
-		super();
-	}
+    private Long id;
 
-	public Inventory(int count) {
-		super();
-		this.count = count;
-	}
+    private Integer count;
 
- 
- 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
-	}
-
-	@Override
-	public String toString() {
-		return "Inventory [id=" + id + ", count=" + count + "]";
-	}
-    
-    
+    public Inventory(Integer count) {
+        this.count = count;
+    }
 }

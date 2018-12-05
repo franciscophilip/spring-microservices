@@ -10,6 +10,6 @@ import java.util.Optional;
 //repository does not support Reactive. Ideally this should use reactive repository
 @RepositoryRestResource
 @Lazy
-interface CustomerRespository extends JpaRepository<Customer,Long> {
-	Optional<Customer> findByName(@Param("name") String name);
+interface CustomerRespository extends JpaRepository<Customer, Long> {
+    Optional<Customer> findByName(@Param("name") String name);
 }

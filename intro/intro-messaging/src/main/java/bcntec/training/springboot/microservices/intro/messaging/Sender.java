@@ -10,16 +10,18 @@ import org.springframework.stereotype.Component;
 class Sender {
 
     private final RabbitMessagingTemplate template;
-	@Autowired
-	public Sender(RabbitMessagingTemplate template) {
-		this.template = template;
-	}
 
-	@Bean
+    @Autowired
+    public Sender(RabbitMessagingTemplate template) {
+        this.template = template;
+    }
+
+    @Bean
     Queue queue() {
-		return new Queue("TestQ", false);
-	}
-	public void send(String message){
-		template.convertAndSend("TestQ", message);
-	}
+        return new Queue("TestQ", false);
+    }
+
+    public void send(String message) {
+        template.convertAndSend("TestQ", message);
+    }
 }

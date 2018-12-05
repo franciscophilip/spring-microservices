@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>bcntec.training.springboot.microservices</groupId>
-  <artifactId>spring-boot-microservices</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>bcntec.training.springboot.microservices</groupId>
+    <artifactId>spring-boot-microservices</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <modules>
-    <module>intro</module>
-    <module>demo0</module>
-    <module>demo1</module>
-  </modules>
+    <modules>
+        <module>intro</module>
+        <module>demo0</module>
+        <module>demo1</module>
+        <module>docker</module>
+        <module>log-monitor</module>
+        <module>scale-cloud</module>
+        <module>server-config</module>
+    </modules>
+
 </project>

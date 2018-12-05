@@ -1,10 +1,6 @@
 package bcntec.training.springboot.microservices.intro.security;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.io.IOException;
-import java.util.Arrays;
-
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,24 +12,26 @@ import org.springframework.security.oauth2.client.token.grant.password.ResourceO
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import java.io.IOException;
+import java.util.Arrays;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
 public class ApplicationTests {
-  
-	
-	@Test
-	public void testSpringBootApp() throws JsonProcessingException, IOException {
-		RestTemplate restTemplate = new RestTemplate();
-		Greet body = restTemplate.getForObject("http://localhost:8080", Greet.class);
-		assertThat("Hello World!".equals(body.getMessage()));	
-	}
 
 
+    @Test
+    public void testSpringBootApp() throws JsonProcessingException, IOException {
+        RestTemplate restTemplate = new RestTemplate();
+        Greet body = restTemplate.getForObject("http://localhost:8080", Greet.class);
+        assertThat("Hello World!".equals(body.getMessage()));
+    }
 
-	@Test
-	public void testOAuthService() {	
+
+    @Test
+    public void testOAuthService() {
         ResourceOwnerPasswordResourceDetails resource = new ResourceOwnerPasswordResourceDetails();
         resource.setUsername("guest");
         resource.setPassword("guest123");
@@ -41,15 +39,15 @@ public class ApplicationTests {
         resource.setClientId("trustedclient");
         resource.setClientSecret("trustedclient123");
         resource.setGrantType("password");
-        resource.setScope(Arrays.asList(new String[]{"read","write","trust"}));
-  
+        resource.setScope(Arrays.asList(new String[]{"read", "write", "trust"}));
+
         DefaultOAuth2ClientContext clientContext = new DefaultOAuth2ClientContext();
         OAuth2RestTemplate restTemplate = new OAuth2RestTemplate(resource, clientContext);
- 
+
         Greet greet = restTemplate.getForObject("http://localhost:8080", Greet.class);
 
         Assert.assertEquals("Hello World!", greet.getMessage());
-	}
+    }
 
-	
+
 }

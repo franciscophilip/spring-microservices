@@ -11,21 +11,21 @@ import org.springframework.stereotype.Component;
 @Lazy
 class Sender {
 
-	RabbitMessagingTemplate template;
+    RabbitMessagingTemplate template;
 
-	@Autowired
-	Sender(RabbitMessagingTemplate template){
-		this.template = template;
-	}
+    @Autowired
+    Sender(RabbitMessagingTemplate template) {
+        this.template = template;
+    }
 
-	@Bean
+    @Bean
     Queue queue() {
-		return new Queue("CustomerQ", false);
-	}
+        return new Queue("CustomerQ", false);
+    }
 
-	public void send(String message){
-		template.convertAndSend("CustomerQ", message);
-		System.out.println("Ready to send message but suppressed "+ message);
+    public void send(String message) {
+        template.convertAndSend("CustomerQ", message);
+        System.out.println("Ready to send message but suppressed " + message);
 
-	}
+    }
 }

@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @RestController
-class CustomerController{
+class CustomerController {
 
-	private final CustomerRegistrar customerRegistrar;
+    private final CustomerRegistrar customerRegistrar;
 
-	@Autowired
-	CustomerController(CustomerRegistrar customerRegistrar){
-		this.customerRegistrar = customerRegistrar;
-	}
+    @Autowired
+    CustomerController(CustomerRegistrar customerRegistrar) {
+        this.customerRegistrar = customerRegistrar;
+    }
 
-	@RequestMapping( path="/register", method = RequestMethod.POST)
-    Mono<Customer> register(@RequestBody Customer customer){
-	 	return customerRegistrar.register(customer);
-	}
+    @RequestMapping(path = "/register", method = RequestMethod.POST)
+    Mono<Customer> register(@RequestBody Customer customer) {
+        return customerRegistrar.register(customer);
+    }
 }

@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
 @RestController
-class GreetingController{
+class GreetingController {
 
     @RequestMapping("/greet")
-    Greet greet(){
+    Greet greet() {
         return new Greet("Hello World!");
     }
 

@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.LongAdder;
 
 class ControllerCounter {
     LongAdder count;
-    int threshold = 2;
+    int threshold = 100;
     Calendar expiry = null;
 
     ControllerCounter() {

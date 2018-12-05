@@ -21,7 +21,7 @@ class Greet extends ResourceSupport {
         this.message = message;
     }
 
-    public String toString(){
+    public String toString() {
         return message;
     }
 
